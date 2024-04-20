@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        var user = {};
+
+        var proxy = new Proxy(user,{
+            // get:function(target,propKey){
+            //     console.log(target,propKey);
+            //     return propKey;
+            // },
+            set:function(target,propKey,value){
+                if(propKey === "age"){
+                    if(!Number.isInteger(value)){
+                        throw new TypeError('The age is not an integer');
+                    }
+                    if(value >= 200){
+                        throw new RangeError('The age seems invalid');
+                    }
+                }
+                target[propKey] = value;
+            }
+        })
+
+        proxy.age = 1000;
+        console.log(proxy.age);
+
+
+    </script>
+    
+</body>
+</html>

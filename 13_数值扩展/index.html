@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let num1 = 1000000000;
+        let num2 = 1_000_000_000;
+        console.log(num1);
+        console.log(num2);
+
+        console.log(Number.isFinite(100)); // true：有限
+        console.log(Number.isFinite(Infinity)); // false：无限
+
+        console.log(Number.isNaN(100)); // false
+        console.log(Number.isNaN(NaN)); // true
+        console.log(Number.isNaN("haha")); // false
+
+
+        let str1 = "10.4hello";
+        console.log(typeof str1);
+        console.log( Number(str1));
+        console.log( Number.parseInt(str1)); // 整数
+        console.log( Number.parseFloat(str1)); // 小数
+
+
+        console.log(Number.isInteger(10)) // true
+        console.log(Number.isInteger(10.5)) // false
+
+    </script>
+    
+</body>
+</html>

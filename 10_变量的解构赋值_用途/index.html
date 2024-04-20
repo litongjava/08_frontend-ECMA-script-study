@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // let x = 100;
+        // let y = 200;
+
+        // let temp = x;
+
+        // x = y
+        // y = temp;
+        // console.log(x);
+        // console.log(y);
+
+        // let x = 100;
+        // let y = 200;
+
+        // [x,y] = [y,x]
+
+        // console.log(x,y); // 200 100
+
+
+        // function getPosition(){
+        //     let x = 1000;
+        //     let y = 2000;
+        //     return [x,y];
+        // }
+
+        // let [x,y] = getPosition();
+        // console.log(x,y);
+
+
+        // function getInfo(){
+        //     let name = "iwen";
+        //     let age = 20;
+        //     let sex = "男"
+        //     return {
+        //         name:name,
+        //         age:age,
+        //         sex:sex
+        //     }
+        // }
+
+        // let { name,age } = getInfo();
+        // console.log(name,age);
+
+        var jsonData = {
+            "id": 347230,
+            "name": "海阔天空",
+            "duration": 326000,
+            "status": 0,
+            "artists": {
+                "id": 11127,
+                "img1v1Url": "https://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+            }
+        }
+
+        let { id, name, artists } = jsonData;
+        console.log(id, name);
+        console.log(artists.img1v1Url);
+
+    </script>
+
+</body>
+
+</html>

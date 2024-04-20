@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        // 将数组中的1，2，替换成6，7：[6,7,3,4,5,6,7]
+        // var arr = [1,2,3,4,5,6,7];
+        // console.log(arr.copyWithin(0,5,7));;
+        // [1,2,4,5,5,6,7]
+        // console.log(arr.copyWithin(2,3,5));
+
+        var arr = [10,20,30,40];
+
+        // var result = arr.find(function(value,index,arr){
+        //     return value > 20;
+        // })
+
+        // console.log(result);
+
+        // arr.find(function(value,index,arr){
+        //    if(value > 20){
+        //        console.log(value);
+        //    }
+        // })
+
+        // var result = arr.findIndex(function(value,index,arr){
+        //     return value > 20;
+        // })
+
+        // console.log(result); // 2
+
+        // arr.findIndex(function(value,index,arr){
+        //    if(value > 20){
+        //        console.log(index);
+        //    }
+        // })
+
+        var arr1 = [100,NaN];
+        // console.log(arr1.indexOf(NaN));
+
+        // findeIndex可以遍历NaN（了解性知识）
+        // arr1.findIndex(function(value,index,arr){
+        //     if(Number.isNaN(NaN)){
+        //         console.log(index);
+        //     }
+        // })
+
+
+        // var arr2 = new Array(5);
+        // arr2.fill(100);
+        // console.log(arr2);
+
+        // var arr3 = [10,20,30];
+        // arr3.fill(100);
+        // console.log(arr3);
+
+
+
+        var arr5 = [10,20,30,40];
+
+        for(let item of arr5.keys()){
+            console.log(item); // 0 1 2 3
+        }
+
+        for(let item of arr5.values()){
+            console.log(item); // 10,20,30,40
+        }
+
+        for(let item of arr5.entries()){
+            console.log(item); // [0, 10]  [1, 20]  [2, 30]  [3, 40]
+        }
+
+
+
+    </script>
+    
+</body>
+</html>

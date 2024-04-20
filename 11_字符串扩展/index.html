@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="contianer">
+        
+    </div>
+
+    <script>
+
+        // // unicode:十六进制：0-9abcdef
+        // let st = "\u0062";
+        // console.log(st);
+
+        // let str = "hello";
+        // for(let i of str){
+        //     console.log(i); // i代表是每一个字符
+        // }
+
+
+        // let str1 = "hello";
+        // let str2 = `hello`;
+        // console.log(str2);
+
+        let url = "https://www.itbaizhan.com";
+        let itbaizhan = "<a href='" + url + "'>itbaizhan</a>";
+        let itbaizhan1 = `<a href='${url}'>itbaizhan</a>`;
+
+        var contianer = document.getElementById("contianer");
+        contianer.innerHTML = itbaizhan1;
+
+
+    </script>
+    
+</body>
+</html>

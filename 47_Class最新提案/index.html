@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class People{
+            // 提案的静态属性写法
+            static age = 20;
+            #count = 10; // 私有属性
+
+            _hi(){
+                console.log("我是私有方法了");
+            }
+            // 私有方法
+            #say(){
+                console.log("私有方法");
+            }
+        }
+
+        // 有问题！脱离了类
+        // People.age = 20;
+        // console.log(People.age);
+        console.log(People.age);
+
+        var p = new People();
+        p._hi();
+        console.log(p.#count);
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function add(...items){
+            var sum = 0;
+            for(let i of items){
+                sum +=i
+            }
+            console.log(sum);
+        }
+        add(100,200,300)
+
+
+        // rest参数处理方式，必须是最后一个参数
+        function add1(x,y,...z){
+
+        }
+        console.log(add1.length);// 2  length在rest参数模式下也会失效
+
+
+        // 函数参数使用了默认值、解构赋值、或者扩展运算符，那么函数内部就不能显式设定为严格模式，否则会报错。
+        function add2(x = 10){
+            // "use strict"
+            console.log(x);
+        }
+
+        add2(100)
+
+
+        function add3(){}
+        console.log(add3.name); // add3:获取函数名称
+
+
+    </script>
+    
+</body>
+</html>

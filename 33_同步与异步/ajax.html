@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.0.js"></script>
+</head>
+<body>
+    
+    <div id="root"></div>
+
+    <script>
+
+        var content = ""
+
+        // 异步操作
+        $.ajax({
+            type:"get",
+            url:"http://iwenwiki.com/api/blueberrypai/getBlueBerryJamInfo.php",
+            success:function(data){
+                callback(data)
+            }
+        })
+
+        // 回调函数
+        function callback(data){
+            var root = document.getElementById("root");
+            root.innerHTML = data.msg;
+            cb1()
+        }
+
+        function cb1(){
+            console.log("cb1");
+        }
+
+    </script>
+    
+</body>
+</html>

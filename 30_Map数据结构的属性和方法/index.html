@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var map = new Map();
+        map.set("name","itbaizhan").set("age",20).set("sex","男")
+        // console.log(map.size); // 3
+        // console.log(map.get("name"));
+        // map.delete("sex")
+        // console.log(map.has("sex")); // true
+        // map.clear();
+        // console.log(map.size);  // 0
+
+        for(let key of map.keys()){
+            console.log(key);
+        }
+
+        for(let value of map.values()){
+            console.log(value);
+        }
+
+        for (let item of map.entries()) {
+            console.log(item[0], item[1]);
+        }
+
+        map.forEach(function (value, key, map) {
+            console.log(key, value);
+        });
+
+
+    </script>
+    
+</body>
+</html>

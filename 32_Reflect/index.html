@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // const duck = {
+        //     name: 'Maurice',
+        //     color: 'white',
+        //     greeting: function() {
+        //         console.log(`Quaaaack! My name is ${this.name}`);
+        //     }
+        // }
+
+        // console.log(Reflect.has(duck,"names"));
+        // console.log(Reflect.ownKeys(duck));
+        // Reflect.set(duck,"sex","男")
+        // console.log(duck);
+
+        var user = {}
+        var obj = new Proxy(user, {
+            set: function (target, name, value) {
+                var success = Reflect.set(target, name, value);
+                if (success) {
+                    console.log('property ' + name + ' on ' + target + ' set to ' + value);
+                }
+                return success;
+            }
+        });
+
+        obj.name = "iwen"
+        console.log(obj.name);
+
+
+
+
+    </script>
+
+</body>
+
+</html>

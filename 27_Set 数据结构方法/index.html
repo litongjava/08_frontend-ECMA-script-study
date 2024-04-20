@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        var s = new Set();
+        s.add(100)
+        s.add(200)
+        // var result = s.delete(100);
+        // var result = s.has(100);
+        // console.log(result);
+        // s.clear();
+        // console.log(s);
+
+        // 键
+        for(let item of s.keys()){
+            console.log(item);
+        }
+
+        // 值
+        for(let item of s.values()){
+            console.log(item);
+        }
+
+        for(let item of s.entries()){
+            console.log(item); // [100, 100]  [200, 200]
+        }
+
+        s.forEach((value) => console.log(value))
+
+        s.forEach(function(value){
+            console.log(value);
+        })
+
+
+    </script>
+    
+</body>
+</html>

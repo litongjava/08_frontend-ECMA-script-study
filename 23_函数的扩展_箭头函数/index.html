@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // var add = function(x){
+        //     return x;
+        // }
+
+        // 改写成箭头函数
+        // var add : 函数名
+        // 第一个x : 代表参数
+        // => : 相当于函数function
+        // 第二个x : 返回值
+        // var add = x => x;
+
+        // var result = add(100);
+        // console.log(result);
+
+
+        // function demo(str){
+        //     return str;
+        // }
+
+        // var demo = str => str;
+        // var result = demo("hello");
+        // console.log(result);
+
+        // 没有参数的情况
+        // var add = function(){
+        //     return 100;
+        // }
+        // var add = () => 100;
+
+        // // 如果有多个参数呢
+        // var add1 = function(x,y){
+        //     return x + y
+        // }
+
+        // var add1 = (x,y) => x+y
+        // var result1 = add1(10,20)
+        // console.log(result1);
+
+        // var add = function(x,y){
+        //     var z = 100;
+        //     return x+y+z;
+        // }
+
+        // var add = (x,y) => {
+        //     var z = 100;
+        //     return x+y+z
+        // };
+
+        // var result = add(10,20)
+        // console.log(result);
+
+        // var add = (x,y) => {
+        //     return{
+        //         x:100,
+        //         y:200
+        //     }
+        // }
+
+        // 回调函数，匿名函数:箭头函数最大的应用场景就是匿名函数或者回调函数
+        // setTimeout(function(){
+        //     console.log("定时器");
+        // })
+
+        // setTimeout(() =>{
+        //     console.log("定时器");
+        // })
+
+        // var arr = [10,20,30];
+        // arr.map((element,index) =>{
+        //     console.log(element);
+        // })
+
+        // var name = "itbaizhan"
+        // var user = {
+        //     name:'iwen',
+        //     getName(){
+        //         var that = this;
+        //         setTimeout(function(){
+        //             console.log(that.name); 
+        //         })
+        //     }
+        // }
+        // // 定时器中的this指向window
+        // // 我需要打印iwen
+        // user.getName(); // iwen
+
+
+        var name = "itbaizhan"
+        var user = {
+            name:'iwen',
+            getName(){
+                // 箭头函数中是没有this的，如果使用this，指向他的上一层
+                setTimeout(() =>{
+                    console.log(this.name); 
+                })
+            }
+        }
+        user.getName(); // iwen
+        
+
+
+    </script>
+    
+</body>
+</html>

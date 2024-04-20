@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // let a = 10;
+        // let b = 20;
+        // let c = 30;
+
+        // let d = 40,
+        //     e = 50,
+        //     f = 60;
+
+        // console.log(a,d);
+
+        // 变量的解构赋值：数组的表现形式(数组的解构赋值)
+        // let [a,c,b] = [10,20,30];
+        // console.log(a,b,c); // 10,30,20
+
+        let [a,b,c,[d]] = [10,20,30,[40]];
+        console.log(a,b,c,d);
+
+        // 左右时模式对称，左边和右边格式必须相同
+        // 数据其实是一一对应的
+
+        let [name,age,sex] = ["iwen",20];
+        console.log(name,age);
+        console.log(sex); // 声明了但是没有赋值：undefined
+
+        let demo;
+        console.log(demo);
+
+
+    </script>
+    
+</body>
+</html>

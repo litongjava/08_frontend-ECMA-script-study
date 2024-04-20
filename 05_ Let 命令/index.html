@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        /**
+         * 1. var关键字的作用域：var关键字是函数级别作用域
+         * 2. let关键字是块级作用域，理解为{}级别的作用域
+         * 3. let不存在变量提升
+         * 4. let不允许重复声明
+         */
+
+        // var name = "itbaizhan";
+        // console.log(name);
+        // if(true){
+        //     var age = 20;
+        // }
+        // console.log(age); // 20
+        // function fn(){
+        //     var sex = "男";
+        // }
+        // fn();
+        // console.log(sex); // 报错
+
+        // let name = "itbaizhan";
+        // console.log(name);
+        // if(true){
+        //     let age = 20;
+        // }
+        // console.log(age); // 报错
+
+        // for(let i = 0;i<5;i++){
+        //     console.log(i);
+        // }
+        
+
+        // var arr = [];
+        // for(var i = 0;i<10;i++){ // 并不是创建了10个i，而是只创建了一个i，i一直在被重新赋值
+        //     arr[i] = function(){
+        //         console.log(i);
+        //     }
+        // }
+        // // 相当于每一个arr= [10个数据],每个数据都是一个函数
+        // arr[6](); // 10
+
+
+        // var arr = [];
+        // for(let i = 0;i<10;i++){  // 每次循环独立的创建一个i，有10个i
+        //     arr[i] = function(){
+        //         console.log(i);
+        //     }
+        // }
+        // arr[3](); // 6
+
+
+        // console.log(names);
+        // let names = "itbaizhan";
+
+        // let age = 20;
+        // let age = 30;
+        // console.log(age);
+
+
+    </script>
+    
+</body>
+</html>

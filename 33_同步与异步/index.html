@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // 同步代码
+        for (var i = 0; i < 10000; i++) {
+            if (i == 9999) {
+                console.log("循环结束了~~")
+            }
+        }
+        console.log("ok")
+
+        // while(true){
+
+        // }
+        // console.log("ok")
+
+        // 异步代码
+        var n = 0;
+        setTimeout(function(){
+            n +=1
+            console.log(n);
+        },2000)
+        console.log(n); // 
+
+
+        // 在我们目前所学习的知识点中：异步代码：
+        // 1. 网络请求是异步的  2. 定时器是异步的
+
+
+
+    </script>
+
+</body>
+
+</html>

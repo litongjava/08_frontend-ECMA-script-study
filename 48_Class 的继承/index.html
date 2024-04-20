@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // class Point{
+        //     constructor(x,y){
+        //         this.x = x;
+        //         this.y = y
+        //     }
+        //     say(){
+        //         console.log("Hello");
+        //     }
+        // }
+
+        // class ColorPoint extends Point{
+        //     // 子类继承父类，必须实现构造函数
+        //     constructor(x,y,z){
+        //         super(x,y)  // super必须放在第一行
+        //         this.z = z;
+        //     }
+
+        //     hi(){
+        //         console.log("hi");
+        //     }
+        //     say(){
+        //         console.log("colorpoint:Hello");
+        //     }
+        // }
+
+        // var cp = new ColorPoint(10,20,30)
+        // cp.say(); // 调用子类的say方法，就近原则：先调用自己，在去父类上找
+        // console.log(cp.x);
+        // console.log(cp.z);
+        // cp.hi()
+
+
+        class People{
+            say(){
+                console.log("hello");
+            }
+        }
+
+        class Student extends People{
+            hi(){
+                super.say(); // 调用父类的方法
+            }
+        }
+
+        let s = new Student();
+        s.hi(); // hello
+
+
+    </script>
+    
+</body>
+</html>

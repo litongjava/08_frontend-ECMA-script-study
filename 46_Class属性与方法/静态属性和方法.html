@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class Person{
+            constructor(name){
+                this.name = name;
+            }
+            // 静态方法
+            static say(){
+                console.log("静态方法");
+            }
+        }
+
+        // 静态方法的调用是通过类名调用
+        Person.say();
+        var p = new Person();
+        // p.say(); // 报错
+
+
+        class People{
+            // 静态方法中的this指向类，而非类的实例
+            static staticSay(){
+                this.say(); // say方法调用的是静态方法还是实例方法
+            }
+            static say(){
+                console.log("静态say方法");
+            }
+            // 实例方法中的this指向类的实例对象
+            say(){
+                console.log("实例say方法",this.name);
+            }
+        }
+
+        People.staticSay();
+        // var p = new People("iwen")
+        // p.staticSay()
+
+        class Student{}
+        // 属性：静态属性
+        Student.age = 20;
+        console.log(Student.age);
+
+    </script>
+    
+</body>
+</html>

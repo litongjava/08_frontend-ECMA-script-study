@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <script>
+
+        // $.getJSON("http://iwenwiki.com/api/generator/list.php", function (data) {
+        //     $.getJSON("http://iwenwiki.com/api/generator/id.php", { id: data[0] }, function (data) {
+        //         $.getJSON("http://iwenwiki.com/api/generator/name.php", { name: data.name }, function (data) {
+        //             console.log(data);
+        //         })
+        //     })
+        // })
+
+
+        // 把一个异步的操作变成一个同步的操作，但是实质上还是异步
+        function ajax(url){
+            $.getJSON(url,function(data){
+                info.next(data)
+            })
+        }
+
+        function* getInfo(){
+            var ids = yield ajax("http://iwenwiki.com/api/generator/list.php");
+            var names = yield ajax("http://iwenwiki.com/api/generator/id.php?id="+ids[0]);
+            var infos = yield ajax("http://iwenwiki.com/api/generator/name.php?name="+names.name)
+            console.log(infos);
+        }
+
+        var info = getInfo();
+        info.next()
+
+
+    </script>
+
+</body>
+
+</html>

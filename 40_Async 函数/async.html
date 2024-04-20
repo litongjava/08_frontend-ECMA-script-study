@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <script>
+
+        // 把一个异步的操作变成一个同步的操作，但是实质上还是异步
+        // function ajax(url){
+        //     $.getJSON(url,function(data){
+        //         info.next(data)
+        //     })
+        // }
+
+        // function* getInfo(){
+        //     var ids = yield ajax("http://iwenwiki.com/api/generator/list.php");
+        //     var names = yield ajax("http://iwenwiki.com/api/generator/id.php?id="+ids[0]);
+        //     var infos = yield ajax("http://iwenwiki.com/api/generator/name.php?name="+names.name)
+        //     console.log(infos);
+        // }
+
+        // var info = getInfo();
+        // info.next()
+
+        // 接下来我们要写的才是日后我们真正要写的代码业务
+        function ajax(url){
+            return new Promise((resolve,reject)=>{
+                $.getJSON(url,function(data){
+                    resolve(data)
+                },function(error){
+                    reject(error)
+                })
+            })
+        }
+
+        async function getInfo(){
+            var ids = await ajax("http://iwenwiki.com/api/generator/list.php")
+            var names = await ajax("http://iwenwiki.com/api/generator/id.php?id="+ids[0])
+            var infos = await ajax("http://iwenwiki.com/api/generator/name.php?name="+names.name)
+            console.log(infos);
+        }
+
+        getInfo();
+
+
+        // promise: 优势在于then，解决了回调函数问题
+        // Generator: 让异步以同步的方式处理
+        // async: 让异步以同步的方式处理，优势，代码的可读性更好了
+        // async + promise得到更优质的开发体验
+
+        // 回调函数   事件处理   Promise  Generator  async
+
+    </script>
+
+</body>
+
+</html>

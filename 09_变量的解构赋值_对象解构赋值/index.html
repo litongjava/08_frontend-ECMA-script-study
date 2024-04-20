@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // 对象的解构赋值
+        // 前面的变量，必须与后面的键值对中的键保持一致
+        // let { sex,age,name } = { name:"iwen",age:20 };
+        // console.log(name,age);
+        // console.log(sex);
+
+        // Math.random()  Math.abs()  Math.floor()  Math.ceil()
+
+        // let { random,abs } = Math;
+        // let { log } = console;
+
+        // log(random());
+        // log(abs(-10)); // 10
+
+        // var user = {
+        //     name:"iwen",
+        //     age:20,
+        //     job:"itbaizhan"
+        // }
+
+        // let { name,job } = user;
+        // log(name,job)
+
+        // let { x = 3 } = { y:10,x:100 };
+        // log(x);
+
+        // 注意：在对象的解构赋值中，不要使用已经声明的变量，如果一定要用。可以如下
+        // let hello = "Hello";
+        // ({ hello } = { hello:"world" });
+        // console.log(hello);
+
+
+        // 字符串的解构赋值
+        let [a,b,c,d,e] = "hello";
+        console.log(e); // o
+        // 字符串本身具有一个length属性
+        let { length : len } = "hello world";
+        console.log(len);
+
+
+    </script>
+    
+</body>
+</html>

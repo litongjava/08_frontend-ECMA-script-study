@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function getJSON(url){
+            const promise = new Promise(function(resolve, reject){
+                // 网络请求
+                const client = new XMLHttpRequest();
+                client.open("get",url);
+                // 相应为json格式的数据
+                client.responseType = "json"
+                client.send();
+                client.onreadystatechange = function(){
+                    if(client.readyState === 4){
+                        if(client.status === 200){
+                            resolve(client.response) 
+                        }else{
+                            reject(new Error(client.statusText))
+                        }
+                    }
+                }
+            })
+            return promise;
+        }
+
+        // getJSON("http://iwenwiki.com/api/blueberrypai/getChengpinDetails.php").then(
+        //     function(data){
+        //         console.log(data);
+        //     },
+        //     function(error){
+        //         console.log(error);
+        //     }
+        // )
+        getJSON("http://iwenwiki.com/api/blueberrypai/getChengpinDetails.php").then(
+            data =>{
+                console.log(data);
+            },
+            error =>{
+                console.log(error);
+            }
+        )
+
+
+    </script>
+    
+</body>
+</html>

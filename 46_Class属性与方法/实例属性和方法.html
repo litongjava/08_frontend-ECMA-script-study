@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class Person{
+            constructor(name,age){
+                // name和age属于属性
+                // this：指向当前实例对象
+                this.name = name;
+                this.age = age;
+            }
+            // 实例方法
+            say(){
+                // this.name 和 this.age 调用的属性就属于实例属性
+                console.log(this.name,this.age);
+            }
+        }
+
+        let p = new Person("iwen",20)
+        // p:p是Person的一个实例对象
+        p.say();
+        console.log(p.name,p.age);
+
+
+    </script>
+    
+</body>
+</html>

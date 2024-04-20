@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        /*
+            1. class关键字代表类
+            2. constructor是构造函数
+            3. geter和seter对属性进行获取和设置
+            4. 注意事项：
+                1. 默认严格模式
+                2. 不存在变量提升
+                3. name属性可以获取类名
+        */
+
+        class Person{
+            constructor(name,age,sex){
+                this.name = name;
+                this.age = age;
+                this.sex = sex
+            }
+
+            say(){
+                console.log(this.name +":say");
+            }
+
+            // sexer属于独立属性
+            get sexer(){
+                return this.sex
+            }
+            set sexer(s){
+                this.sex = s;
+            }
+        }
+
+        var p = new Person("李四",40,"人妖")
+        // p.say()
+
+        p.sexer = "女"
+        console.log(p.sexer); // 女
+
+
+        // 不存在变量提升
+        class Student{}
+        var s = new Student()
+        console.log(Student.name); // Student
+
+    </script>
+    
+</body>
+</html>

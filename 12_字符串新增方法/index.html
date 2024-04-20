@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        var str = "hello world";
+        // indexOf:返回存在元素的下标，如果不存在，返回-1
+        if(str.indexOf("e") >-1){
+            console.log("存在");
+        }
+        
+
+        console.log(str.includes("o")); // true
+        console.log(str.startsWith("hello")); // true
+        console.log(str.endsWith("d")); // true
+        console.log(str.includes("o",8)); // false
+
+        var name = "it";
+        console.log(name.repeat(1)); // it
+        console.log(name.repeat(3)); // ititit
+        console.log(name.repeat(0)); // ""
+
+
+        var job = "sxt";
+        console.log(job.padStart("5","a")); // aasxt
+        console.log(job.padEnd("5","a")); // sxtaa
+
+
+        var demo = "   demo   ";
+        console.log(demo.trim());
+        console.log(demo.trimStart());
+        console.log(demo.trimEnd());
+
+
+        // 正数从0开始，负数是从1开始
+        var test = "test";
+        console.log(test.at(2)); // s
+        console.log(test.at(-3)); // e
+
+    </script>
+    
+</body>
+</html>

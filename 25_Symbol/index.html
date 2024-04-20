@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        var user = {
+            name:"iwen"
+        }
+
+        /*
+            Symbol:
+                1. 新的原始数据类型：字符串和数字
+                2. 他不能使用new关键字去生成
+                3. 他是独一无二的
+                4. Symbol可以接受一个参数，参数的目的是为了方便识别不同的Symbol
+                5. Symbol的参数只是描述，哪怕描述内容相同，两个值也是不同的
+                6. 可以使用description获取一个Symbol的描述
+                7. Symbol作为对象的属性名，可以保证不重复
+                8. Symbol作为对象的属性名，读取的时候要用数组的方式
+                9. Symbol作为对象的属性名，读取的时候只能使用getOwnPropertySymbols()
+                10. 如果要创建重复的Symbol的值，需要使用Symbol.for()
+        */
+        var s = Symbol();
+        console.log(typeof s); // symbol // number string object
+
+
+        var s1 = Symbol("itbaizhan");
+        var s2 = Symbol("sxt");
+        console.log(s1,s2);
+
+
+        var s3 = Symbol("iwen");
+        var s4 = Symbol("iwen");
+        console.log(s3 === s4); // false
+
+        console.log(s1.description); // itbaizhan
+
+
+        var info2Symbol = Symbol("name")
+        var info1 = {
+            name:"iwen"
+        }
+
+        var info2 = {
+            [info2Symbol]:"ime"
+        }
+
+        var newInfo = Object.assign(info1,info2); // {name:'ime', [info2Symbol]:"ime"}
+        console.log(newInfo.name); // iwen
+        // 用数组的方式读取Symbol属性
+        console.log(newInfo[info2Symbol]); // ime
+
+
+        var info3Symbol = Symbol("job")
+        var info3 = {
+            name:"iwen",
+            age:20,
+            [info3Symbol]:"itbaizhan"
+        }
+
+        for(let key in info3){
+            console.log(key);
+        }
+        console.log(Object.getOwnPropertySymbols(info3)); // Symbol("job")
+
+
+        var itSymbol1 = Symbol.for("itbaizhan")
+        var itSymbol2 = Symbol.for("itbaizhan")
+        console.log(itSymbol1 === itSymbol2); // true
+
+    </script>
+    
+</body>
+</html>

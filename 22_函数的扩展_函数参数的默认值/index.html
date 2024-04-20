@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // 函数参数的默认值
+        function log(info = "world") {
+            console.log(info);
+        }
+
+        log("hello");
+
+        var x = 99;
+        // 默认值也可以是表达式，符合语法格式的都是可以的
+        // 每一次调用函数，函数的参数的参数的默认值都会重新求值
+        function add(p = x + 1) {
+            console.log(p);
+        }
+
+        add();
+        x = 100;
+        add(); // 101
+
+
+        function add2(x = 1, y) {
+            console.log(x + y);
+        }
+        add2(10); // NaN = 10 + undefined 
+
+        // length遇到参数默认值会失真，所以不要在使用了
+        function add3(x, y, z = 2) { }
+        console.log(add3.length); // 2
+
+        
+        function missingParameter() {
+            // 抛出错误的操作
+            throw new Error('Missing parameter 1');
+        }
+        // 必选参数
+        function add4(x = missingParameter()){
+            console.log(x);
+        }
+
+        add4()
+
+    </script>
+
+</body>
+
+</html>

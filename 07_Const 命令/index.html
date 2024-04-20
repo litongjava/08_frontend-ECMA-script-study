@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+        // chrome浏览器是可以支持let和const新特性的，所以不需要用babel
+
+        // 1. const一旦声明，不可改变(常量)
+        // 2. const声明必须进行初始化
+        // 3. const也是块级作用域
+        // 4. const不存在变量提升
+        // 5. const不能重复声明
+
+        const name = "itbaizhan";
+        // name = "sxt";
+        console.log(name);
+
+        const age = 20;
+        console.log(age);
+
+        if(true){
+            const sex = "男";
+        }
+        // console.log(sex); // 报错
+
+        // console.log(demo);
+        // const demo = "demo";
+
+        // const hello = "hello"
+        // const hello = "world"
+
+    </script>
+    
+</body>
+</html>

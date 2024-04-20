@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script>
+
+        // 在对象中，所有的key，最终都会被转成字符串类型
+        // var user = {
+        //     "name":"iwen",
+        //     age:20
+        // }
+
+        // var root = document.getElementById("root")
+        // console.log(root.toString());
+        // user[root] = "文本" // 把root强制的转换成了字符串
+        // console.log(user);
+
+        // // object:字符串：值
+        // // Map:值：值
+
+        // var map = new Map();
+        // map.set(root,"文本");
+        // console.log(map);
+
+        // var map = new Map();
+        // map.set(["a"],555);
+        // console.log(map);
+        // console.log(map.get(["a"]));
+
+        // // 原始数据类型比较两个值一样的情况下是true
+        // // 符合数据类型(数组和对象)比较两个值一样的情况下，不会返回true，而是false
+        // console.log(["a"] === ["a"]); // true or false
+        // console.log({} === {}); // true or false
+        // console.log(10 === 10); // true
+        // console.log("hello" === "hello"); // true
+
+
+        // var map = new Map();
+        // var k1 = ["a"]
+        // var k2 = ["a"]
+        // map.set(k1,100)
+        // map.set(k2,200)
+        // console.log(map);
+
+        const map = new Map();
+        map.set(['hello'], 10);
+        var h = ["hello"];
+        map.set(h,20)
+        console.log(map.get(['hello']));
+
+    </script>
+    
+</body>
+</html>

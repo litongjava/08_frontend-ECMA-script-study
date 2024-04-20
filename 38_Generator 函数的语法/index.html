@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // Generator 函数
+        // 我们建议大家星号总是放在function后面
+        // function* getInfo(){
+        //     yield "hello"
+        //     yield "world"
+        //     return "end"
+        // }
+
+        // var info = getInfo();
+        // console.log(info.next()); // {value: 'hello', done: false}
+        // console.log(info.next()); // {value: 'world', done: false}
+        // console.log(info.next()); // {value: 'end', done: true}
+
+        function* foo(){
+            yield 1
+            yield 2
+            yield 3
+            yield 4
+            yield 5
+            return 6
+        }
+
+        for(let i of foo()){
+            console.log(i); // 1 2 3 4 5 没有6
+        }
+
+
+    </script>
+    
+</body>
+</html>

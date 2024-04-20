@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class Person{
+            say(){
+                this._hi();
+            }
+            // 私有属性和方法，在类的外部是不能调用的
+            _hi(){
+                console.log("hi");
+            }
+        }
+
+        var p = new Person();
+        p.say();
+
+    </script>
+    
+</body>
+</html>

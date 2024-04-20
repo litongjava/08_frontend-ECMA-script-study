@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // weakset初始化的时候，是可以传递参数的，但是参数必须数组或者对象
+        // 而且注意，他们是吧数组或对象的成员放进去
+        var ws = new WeakSet();
+        // ws.add(100) // 报错
+        // ws.add({name:"iwen"})
+        var user = {
+            name:"iwen"
+        }
+        ws.add(user)
+        console.log(ws);
+        console.log(ws.has(user));
+        ws.delete(user)
+        console.log(ws.has(user));
+
+
+    </script>
+    
+</body>
+</html>
